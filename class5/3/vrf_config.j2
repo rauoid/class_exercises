@@ -3,14 +3,14 @@ vrf definition {{ vrf_name }}
  {%- if ipv4_enabled %}
  !
  address-family ipv4
-  route-target export 100:1
-  route-target import 100:1
+  route-target export {{ rd_number }}
+  route-target import {{ rd_number }}
  exit-address-family
  {%- endif %}
  {%- if ipv6_enabled %}
  !
  address-family ipv6
-  route-target export 100:1
-  route-target import 100:1
+  route-target export {{ rd_number }}
+  route-target import {{ rd_number }}
  exit-address-family
  {%- endif %}
