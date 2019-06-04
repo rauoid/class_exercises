@@ -1,0 +1,18 @@
+{%- for vrf_item in vrf_config_list %}
+vrf definition {{ vrf_item["vrf_name"] }}
+ rd {{ vrf_item["rd_number"] }}
+ {%- if vrf_item["ipv4_enabled"] %}
+ !
+ address-family ipv4
+  route-target export {{ vrf_item["rd_number"] }}
+  route-target import {{ vrf_item["rd_number"] }}
+ exit-address-family
+ {%- endif %}
+ {%- if vrf_item["ipv6_enabled"] %}
+ !
+ address-family ipv6
+  route-target export {{ vrf_item["rd_number"] }}
+  route-target import {{ vrf_item["rd_number"] }}
+ exit-address-family
+ {%- endif %}
+ {%- endfor %}
