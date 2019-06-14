@@ -18,7 +18,11 @@ device = Device (
 
 output = device.show("show interface Ethernet1/1")
 
-print("Interface: {}; State: {}; MTU: {}".format(output['TABLE_interface']['ROW_interface']['interface'], 
-                                                 output['TABLE_interface']['ROW_interface']['state'],
-                                                  output['TABLE_interface']['ROW_interface']['eth_mtu'] ))
+
+interface_name = output['TABLE_interface']['ROW_interface']['interface']
+interface_state = output['TABLE_interface']['ROW_interface']['state']
+interface_mtu = output['TABLE_interface']['ROW_interface']['eth_mtu']
+
+print("Interface: {}; State: {}; MTU: {}".format(interface_name, interface_state, interface_mtu))
+
 
