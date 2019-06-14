@@ -32,8 +32,5 @@ print()
 
 # ex 3c
 xmlfile1_dict_forcelist = parsexmltodict_forcelist(xmlfile1, "zones-security")
-xmlfile2_dict_forcelist = parsexmltodict_forcelist(xmlfile2, "zones-security")
 print(type(xmlfile1_dict_forcelist['zones-information']['zones-security']))
-print(type(xmlfile2_dict_forcelist['zones-information']['zones-security']))
-
 
