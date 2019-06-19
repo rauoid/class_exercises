@@ -26,8 +26,6 @@ def gather_arp_table(jnpr_device_obj):
 def print_output(jnpr_device_obj, jnpr_route_table, jnpr_arp_table):
    ''' prints jnpr route and arp tables for device obj '''
 
-#   pprint(dir(jnpr_device_obj.hostname()))
-
    print("Device hostname : {}".format(jnpr_device_obj.hostname))
    print("NETCONF port : {}".format(jnpr_device_obj.port))
    print("Username for connection : {}".format(jnpr_device_obj.user))
