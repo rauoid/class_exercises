@@ -21,7 +21,22 @@ try:
 except LockError as e:
    print("Config session already locked")
 
+# 3b
+print("Set new hostname in candidate config")
+jnpr_device_cfg.load("set system host-name srx2-new-name", format = "set", merge = True)
 
+# 3c
+print("Check diff")
+print(jnpr_device_cfg.diff())
 
+# 3d
+print("Rollback")
+jnpr_device_cfg.rollback(0)
+
+print("Check diff after rollback")
+print(jnpr_device_cfg.diff())
+
+print("Unlock config")
+jnpr_device_cfg.unlock()
 
 
