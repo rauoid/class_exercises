@@ -1,0 +1,1 @@
+export NET_TEXTFSM="MYHOME/ntc-templates/templates/"
