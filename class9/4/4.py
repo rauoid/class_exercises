@@ -7,14 +7,6 @@ from requests.packages.urllib3.exceptions import InsecureRequestWarning
 
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
-#my_device_conn_objects = []
-#
-#my_cisco3_device = open_napalm_connection(cisco3)
-#my_device_conn_objects.append(my_cisco3_device)
-#
-#my_arista1_device = open_napalm_connection(arista1)
-#my_device_conn_objects.append(my_arista1_device)
-
 my_nxos1_device = open_napalm_connection(nxos1)
 
 print(my_nxos1_device)
