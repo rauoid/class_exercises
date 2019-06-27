@@ -1,0 +1,13 @@
+Value DEVICE_ID (\S+)
+Value LOCAL_IF (\S+)
+Value CAPABILITY (\S+)
+Value PORT_ID (\S+)
+
+
+Start
+  ^Device ID\s+.*$$ -> ShowLLDPNei
+
+ShowLLDPNei
+  ^${DEVICE_ID}\s+${LOCAL_IF}\s+\d+\s+${CAPABILITY}\s+${PORT_ID}\s+.*$$ -> Record
+
+EOF
