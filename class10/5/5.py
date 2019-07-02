@@ -10,7 +10,7 @@ start_time = datetime.now()
 max_processes = len(my_devices_list)
 # print(max_processes)
 
-# with content manager
+# with context manager
 with ProcessPoolExecutor(max_processes) as pool:
    future_list = []
 
